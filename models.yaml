@@ -1,49 +1,3918 @@
 providers:
   openai:
     models:
-      gpt-4o-2024-08-06:
-        alias: gpt-4o
-        default: true
-        model_type: chat
-        speed: fast
-        intelligence: highest
-        input_modalities:
-          text: true
-          image: true
-          audio: false
-          video: false
-        output_modalities:
-          text: true
-          image: false
-          audio: false
-          video: false
-        features:
-          reasoning_effort: true
-          json_mode: true
-          structured_output: true
-          function_calling: true
-          streaming: true
-          code_execution: false
-        system_instruction_support:
-          system_message: true
-          developer_message: false
-        built_in_tools:
-          web_search: false
-          computer_use: false
+      babbage-002:
+        name: babbage-002
+        slug: babbage-002
+        performance: 1
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16304544e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
           file_search: false
-        context:
-          release_date: "2024-08-06"
-          context_window: 128000
-          max_output_tokens: 4096
-          max_output_tokens_reasoning_effort: null
-          knowledge_cutoff: "2024-06-01"
-        pricing:
-          time_based: false
-          text:
-            input: 5.00
-            input_cache_hit: 2.50
-            input_cache_write: 0.00
-            output: 15.00
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: false
+          completions: true
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      chatgpt-4o-latest:
+        name: chatgpt-4o-latest
+        slug: chatgpt-4o-latest
+        performance: 3
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: true
+          image_input: true
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+      codex-mini-latest:
+        name: codex-mini-latest
+        slug: codex-mini-latest
+        performance: 4
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 200000.0
+        max_output_tokens: 100000.0
+        knowledge_cutoff: new Date(17172e8)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: true
+          evals: true
+          stored_completions: true
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: true
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!0'
+      computer-use-preview:
+        name: computer-use-preview
+        slug: computer-use-preview
+        current_snapshot: computer-use-preview-2025-03-11
+        tagline: Specialized model for computer use tool
+        description: "The computer-use-preview model is a specialized model for the\
+          \ computer use \ntool. It is trained to understand and execute computer\
+          \ tasks.\nSee the [computer use guide](/docs/guides/tools-computer-use)\
+          \ for more\ninformation. This model is only usable in the \n[Responses API](/docs/api-reference/responses).\n"
+        type: other
+        snapshots:
+        - computer-use-preview-2025-03-11
+        compare_prices:
+        - o3-mini
+        - o1
+        grouped_models: 'null'
         rate_limits:
-          requests_per_minute: 500
-          tokens_per_minute: 30000
+          tier_3:
+            rpm: 3000.0
+            tpm: 20000000.0
+            batch_queue_limit: 450000000.0
+          tier_4:
+            rpm: 3000.0
+            tpm: 20000000.0
+            batch_queue_limit: 450000000.0
+          tier_5:
+            rpm: 3000.0
+            tpm: 20000000.0
+            batch_queue_limit: 450000000.0
+      dall-e-2:
+        name: dall-e-2
+        slug: dall-e-2
+        performance: 1
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: false
+            image: true
+            audio: false
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: true
+          image_edit: true
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        reasoning_tokens: '!1'
+      dall-e-3:
+        name: dall-e-3
+        slug: dall-e-3
+        performance: 3
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: false
+            image: true
+            audio: false
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: true
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      davinci-002:
+        name: davinci-002
+        slug: davinci-002
+        performance: 1
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16304544e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: false
+          completions: true
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-3.5-turbo-16k-0613:
+        name: gpt-3.5-turbo-16k-0613
+        slug: gpt-3-5-turbo-16k-0613
+        performance: 1
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 16385
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16304544e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-3.5-turbo-instruct:
+        name: gpt-3.5-turbo-instruct
+        slug: gpt-3-5-turbo-instruct
+        performance: 1
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 4096
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16304544e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-3.5-turbo:
+        name: gpt-3.5-turbo
+        slug: gpt-3-5-turbo
+        display_name: GPT-3.5 Turbo
+        current_snapshot: gpt-3.5-turbo-0125
+        tagline: Legacy GPT model for cheaper chat and non-chat tasks
+        description: 'GPT-3.5 Turbo models can understand and generate natural language
+          or code and have been optimized for chat using the Chat Completions API
+          but work well for non-chat tasks as well. As of July 2024, use gpt-4o-mini
+          in place of GPT-3.5 Turbo, as it is cheaper, more capable, multimodal, and
+          just as fast. GPT-3.5 Turbo is still available for use in the API.
+
+          '
+        type: chat
+        snapshots:
+        - gpt-3.5-turbo-0125
+        - gpt-3.5-turbo-1106
+        - gpt-3.5-turbo-instruct
+        compare_prices:
+        - gpt-4o-mini
+        - o3-mini
+        point_to: gpt-4o-mini
+        rate_limits:
+          tier_1:
+            rpm: 3500
+            rpd: 10000.0
+            tpm: 200000.0
+            batch_queue_limit: 2000000.0
+          tier_2:
+            rpm: 3500
+            tpm: 2000000.0
+            batch_queue_limit: 5000000.0
+          tier_3:
+            rpm: 3500
+            tpm: 800000.0
+            batch_queue_limit: 50000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 10000000.0
+            batch_queue_limit: 1000000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 50000000.0
+            batch_queue_limit: 10000000000.0
+      gpt-4-turbo-preview:
+        name: gpt-4-turbo-preview
+        slug: gpt-4-turbo-preview
+        display_name: GPT-4 Turbo Preview
+        current_snapshot: gpt-4-0125-preview
+        tagline: An older fast GPT model
+        description: 'This is a research preview of the GPT-4 Turbo model, an older
+          high-intelligence GPT model.
+
+          '
+        type: chat
+        snapshots:
+        - gpt-4-0125-preview
+        - gpt-4-1106-vision-preview
+        compare_prices:
+        - gpt-4o-mini
+        - o3-mini
+        point_to: gpt-4o
+        rate_limits:
+          tier_1:
+            rpm: 500
+            tpm: 30000.0
+            batch_queue_limit: 90000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 450000.0
+            batch_queue_limit: 1350000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 600000.0
+            batch_queue_limit: 40000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 800000.0
+            batch_queue_limit: 80000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 2000000.0
+            batch_queue_limit: 300000000.0
+      gpt-4-turbo:
+        name: gpt-4-turbo
+        slug: gpt-4-turbo
+        display_name: GPT-4 Turbo
+        current_snapshot: gpt-4-turbo-2024-04-09
+        tagline: An older high-intelligence GPT model
+        description: 'GPT-4 Turbo is the next generation of GPT-4, an older high-intelligence
+          GPT model. It was designed to be a cheaper, better version of GPT-4. Today,
+          we recommend using a newer model like GPT-4o.
+
+          '
+        type: chat
+        snapshots:
+        - gpt-4-turbo-2024-04-09
+        compare_prices:
+        - gpt-4o-mini
+        - o3-mini
+        point_to: gpt-4o
+        grouped_models:
+        - gpt-4-turbo-preview
+        rate_limits:
+          tier_1:
+            rpm: 500
+            tpm: 30000.0
+            batch_queue_limit: 90000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 450000.0
+            batch_queue_limit: 1350000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 600000.0
+            batch_queue_limit: 40000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 800000.0
+            batch_queue_limit: 80000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 2000000.0
+            batch_queue_limit: 300000000.0
+      gpt-4.1-mini:
+        name: gpt-4.1-mini
+        slug: gpt-4.1-mini
+        display_name: GPT-4.1 mini
+        current_snapshot: gpt-4.1-mini-2025-04-14
+        tagline: Balanced for intelligence, speed, and cost
+        description: 'GPT-4.1 mini provides a balance between intelligence, speed,
+          and cost that
+
+          makes it an attractive model for many use cases.
+
+          '
+        type: chat
+        snapshots:
+        - gpt-4.1-mini-2025-04-14
+        compare_prices:
+        - gpt-4o-mini
+        - gpt-4.1
+        supported_tools:
+          function_calling: true
+          web_search: true
+          file_search: true
+          file_uploads: false
+          image_generation: false
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+        - name: Standard
+          rate_limits:
+            free:
+              rpm: 3
+              rpd: 200
+              tpm: 40000.0
+            tier_1:
+              rpm: 500
+              rpd: 10000.0
+              tpm: 200000.0
+              batch_queue_limit: 2000000.0
+            tier_2:
+              rpm: 5000.0
+              tpm: 2000000.0
+              batch_queue_limit: 20000000.0
+            tier_3:
+              rpm: 5000.0
+              tpm: 4000000.0
+              batch_queue_limit: 40000000.0
+            tier_4:
+              rpm: 10000.0
+              tpm: 10000000.0
+              batch_queue_limit: 1000000000.0
+            tier_5:
+              rpm: 30000.0
+              tpm: 150000000.0
+              batch_queue_limit: 15000000000.0
+        - name: Long Context
+          tooltip: '> 128k input tokens'
+          rate_limits:
+            tier_1:
+              rpm: 200
+              tpm: 400000.0
+              batch_queue_limit: 5000000.0
+            tier_2:
+              rpm: 500
+              tpm: 1000000.0
+              batch_queue_limit: 40000000.0
+            tier_3:
+              rpm: 1000.0
+              tpm: 2000000.0
+              batch_queue_limit: 80000000.0
+            tier_4:
+              rpm: 2000.0
+              tpm: 10000000.0
+              batch_queue_limit: 200000000.0
+            tier_5:
+              rpm: 8000.0
+              tpm: 20000000.0
+              batch_queue_limit: 2000000000.0
+      gpt-4.1-nano:
+        name: gpt-4.1-nano
+        slug: gpt-4.1-nano
+        display_name: GPT-4.1 nano
+        current_snapshot: gpt-4.1-nano-2025-04-14
+        tagline: Fastest, most cost-effective GPT-4.1 model
+        description: 'GPT-4.1 nano is the fastest, most cost-effective GPT-4.1 model.
+
+          '
+        type: chat
+        snapshots:
+        - gpt-4.1-nano-2025-04-14
+        compare_prices:
+        - gpt-4.1-mini
+        - gpt-4o-mini
+        supported_tools:
+          function_calling: true
+          web_search: false
+          file_search: true
+          file_uploads: false
+          image_generation: true
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+        - name: Standard
+          rate_limits:
+            free:
+              rpm: 3
+              rpd: 200
+              tpm: 40000.0
+            tier_1:
+              rpm: 500
+              rpd: 10000.0
+              tpm: 200000.0
+              batch_queue_limit: 2000000.0
+            tier_2:
+              rpm: 5000.0
+              tpm: 2000000.0
+              batch_queue_limit: 20000000.0
+            tier_3:
+              rpm: 5000.0
+              tpm: 4000000.0
+              batch_queue_limit: 40000000.0
+            tier_4:
+              rpm: 10000.0
+              tpm: 10000000.0
+              batch_queue_limit: 1000000000.0
+            tier_5:
+              rpm: 30000.0
+              tpm: 150000000.0
+              batch_queue_limit: 15000000000.0
+        - name: Long Context
+          tooltip: '> 128k input tokens'
+          rate_limits:
+            tier_1:
+              rpm: 200
+              tpm: 400000.0
+              batch_queue_limit: 5000000.0
+            tier_2:
+              rpm: 500
+              tpm: 1000000.0
+              batch_queue_limit: 40000000.0
+            tier_3:
+              rpm: 1000.0
+              tpm: 2000000.0
+              batch_queue_limit: 80000000.0
+            tier_4:
+              rpm: 2000.0
+              tpm: 10000000.0
+              batch_queue_limit: 200000000.0
+            tier_5:
+              rpm: 8000.0
+              tpm: 20000000.0
+              batch_queue_limit: 2000000000.0
+      gpt-4.1:
+        name: gpt-4.1
+        slug: gpt-4.1
+        display_name: GPT-4.1
+        current_snapshot: gpt-4.1-2025-04-14
+        tagline: Flagship GPT model for complex tasks
+        description: 'GPT-4.1 is our flagship model for complex tasks. It is well
+          suited for problem
+
+          solving across domains.
+
+          '
+        type: chat
+        snapshots:
+        - gpt-4.1-2025-04-14
+        compare_prices:
+        - gpt-4o
+        - o3-mini
+        supported_tools:
+          function_calling: true
+          web_search: true
+          file_search: true
+          file_uploads: false
+          image_generation: true
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+        - name: default
+          rate_limits:
+            tier_1:
+              rpm: 500
+              tpm: 30000.0
+              batch_queue_limit: 90000.0
+            tier_2:
+              rpm: 5000.0
+              tpm: 450000.0
+              batch_queue_limit: 1350000.0
+            tier_3:
+              rpm: 5000.0
+              tpm: 800000.0
+              batch_queue_limit: 50000000.0
+            tier_4:
+              rpm: 10000.0
+              tpm: 2000000.0
+              batch_queue_limit: 200000000.0
+            tier_5:
+              rpm: 10000.0
+              tpm: 30000000.0
+              batch_queue_limit: 5000000000.0
+        - name: Long Context
+          tooltip: '> 128k input tokens'
+          rate_limits:
+            tier_1:
+              rpm: 100
+              tpm: 200000.0
+              batch_queue_limit: 2000000.0
+            tier_2:
+              rpm: 250
+              tpm: 500000.0
+              batch_queue_limit: 20000000.0
+            tier_3:
+              rpm: 500
+              tpm: 1000000.0
+              batch_queue_limit: 40000000.0
+            tier_4:
+              rpm: 1000.0
+              tpm: 5000000.0
+              batch_queue_limit: 100000000.0
+            tier_5:
+              rpm: 4000.0
+              tpm: 10000000.0
+              batch_queue_limit: 1000000000.0
+      gpt-4.5-preview:
+        name: gpt-4.5-preview
+        slug: gpt-4-5-preview
+        display_name: GPT-4.5 Preview
+        current_snapshot: gpt-4.5-preview-2025-02-27
+        tagline: Largest and most capable GPT model
+        description: "This is a research preview of GPT-4.5, our largest and most\
+          \ capable GPT model yet. Its deep world knowledge and better understanding\
+          \ of user intent makes it good at creative tasks and agentic planning. GPT-4.5\
+          \ excels at tasks that benefit from creative, open-ended thinking and conversation,\
+          \ such as writing, learning, or exploring new ideas. \n"
+        video_url: https://www.youtube.com/embed/cfRYp0nItZ8
+        video_thumbnail: /images/model-page/GPT-4.5-livestream.jpg
+        type: chat
+        snapshots:
+        - gpt-4.5-preview-2025-02-27
+        compare_prices:
+        - gpt-4o
+        - o3-mini
+        rate_limits:
+          tier_1:
+            rpm: 1000.0
+            tpm: 125000.0
+            batch_queue_limit: 50000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 250000.0
+            batch_queue_limit: 500000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 500000.0
+            batch_queue_limit: 50000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 1000000.0
+            batch_queue_limit: 100000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 2000000.0
+            batch_queue_limit: 5000000000.0
+      gpt-4:
+        name: gpt-4
+        slug: gpt-4
+        display_name: GPT-4
+        current_snapshot: gpt-4-0613
+        tagline: An older high-intelligence GPT model
+        description: 'GPT-4 is an older version of a high-intelligence GPT model,
+          usable in Chat Completions.
+
+          '
+        type: chat
+        snapshots:
+        - gpt-4-0613
+        - gpt-4-0314
+        compare_prices:
+        - gpt-4o-mini
+        - o3-mini
+        point_to: gpt-4o
+        rate_limits:
+          tier_1:
+            rpm: 500
+            rpd: 10000.0
+            tpm: 10000.0
+            batch_queue_limit: 100000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 40000.0
+            batch_queue_limit: 200000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 80000.0
+            batch_queue_limit: 5000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 300000.0
+            batch_queue_limit: 30000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 1000000.0
+            batch_queue_limit: 150000000.0
+      gpt-4o-audio-preview:
+        name: gpt-4o-audio-preview
+        slug: gpt-4o-audio-preview
+        display_name: GPT-4o Audio
+        current_snapshot: gpt-4o-audio-preview-2024-12-17
+        tagline: GPT-4o models capable of audio inputs and outputs
+        description: "This is a preview release of the GPT-4o Audio models. These\
+          \ models accept \naudio inputs and outputs, and can be used in the Chat\
+          \ Completions REST API.\n"
+        type: chat
+        snapshots:
+        - gpt-4o-audio-preview-2025-06-03
+        - gpt-4o-audio-preview-2024-12-17
+        - gpt-4o-audio-preview-2024-10-01
+        supported_tools:
+          function_calling: false
+          web_search: true
+          file_search: true
+          file_uploads: false
+          image_generation: false
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+          tier_1:
+            rpm: 500
+            tpm: 30000.0
+            batch_queue_limit: 90000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 450000.0
+            batch_queue_limit: 1350000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 800000.0
+            batch_queue_limit: 50000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 2000000.0
+            batch_queue_limit: 2000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 30000000.0
+            batch_queue_limit: 5000000000.0
+      gpt-4o-mini-audio-preview:
+        name: gpt-4o-mini-audio-preview
+        slug: gpt-4o-mini-audio-preview
+        display_name: GPT-4o mini Audio
+        current_snapshot: gpt-4o-mini-audio-preview-2024-12-17
+        tagline: Smaller model capable of audio inputs and outputs
+        description: 'This is a preview release of the smaller GPT-4o Audio mini model.
+          It''s designed to input audio or create audio outputs via the REST API.
+
+          '
+        type: chat
+        snapshots:
+        - gpt-4o-mini-audio-preview-2024-12-17
+        supported_tools:
+          function_calling: false
+          web_search: true
+          file_search: true
+          file_uploads: false
+          image_generation: false
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+          free:
+            rpm: 3
+            rpd: 200
+            tpm: 40000.0
+          tier_1:
+            rpm: 500
+            rpd: 10000.0
+            tpm: 200000.0
+            batch_queue_limit: 2000000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 2000000.0
+            batch_queue_limit: 20000000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 4000000.0
+            batch_queue_limit: 40000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 10000000.0
+            batch_queue_limit: 1000000000.0
+          tier_5:
+            rpm: 30000.0
+            tpm: 150000000.0
+            batch_queue_limit: 15000000000.0
+      gpt-4o-mini-realtime-preview:
+        name: gpt-4o-mini-realtime-preview
+        slug: gpt-4o-mini-realtime-preview
+        display_name: GPT-4o mini Realtime
+        current_snapshot: gpt-4o-mini-realtime-preview-2024-12-17
+        tagline: Smaller realtime model for text and audio inputs and outputs
+        description: 'This is a preview release of the GPT-4o-mini Realtime model,
+          capable of responding to audio and text inputs in realtime over WebRTC or
+          a WebSocket interface.
+
+          '
+        type: other
+        playground_url: /playground/realtime
+        snapshots:
+        - gpt-4o-mini-realtime-preview-2024-12-17
+        rate_limits:
+          tier_1:
+            rpm: 200
+            rpd: 1000.0
+            tpm: 40000.0
+          tier_2:
+            rpm: 400
+            tpm: 200000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 800000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 4000000.0
+          tier_5:
+            rpm: 20000.0
+            tpm: 15000000.0
+      gpt-4o-mini-search-preview:
+        name: gpt-4o-mini-search-preview
+        slug: gpt-4o-mini-search-preview
+        display_name: GPT-4o mini Search Preview
+        current_snapshot: gpt-4o-mini-search-preview-2025-03-11
+        tagline: Fast, affordable small model for web search
+        description: 'GPT-4o mini Search Preview is a specialized model trained to
+          understand and execute [web search](/docs/guides/tools-web-search?api-mode=chat)
+          queries with the Chat Completions API. In addition to token fees, web search
+          queries have a fee per tool call. Learn more in the [pricing](/docs/pricing)
+          page.
+
+          '
+        type: other
+        snapshots:
+        - gpt-4o-mini-search-preview-2025-03-11
+        compare_prices:
+        - gpt-4o
+        - gpt-4o-mini
+        examples: 'null'
+        rate_limits:
+          free:
+            rpm: 3
+            rpd: 200
+            tpm: 40000.0
+          tier_1:
+            rpm: 500
+            rpd: 10000.0
+            tpm: 200000.0
+            batch_queue_limit: 2000000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 2000000.0
+            batch_queue_limit: 20000000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 4000000.0
+            batch_queue_limit: 40000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 10000000.0
+            batch_queue_limit: 1000000000.0
+          tier_5:
+            rpm: 30000.0
+            tpm: 150000000.0
+            batch_queue_limit: 15000000000.0
+      gpt-4o-mini-transcribe:
+        name: gpt-4o-mini-transcribe
+        slug: gpt-4o-mini-transcribe
+        performance: 3
+        latency: 4
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 16000.0
+        max_output_tokens: 2000.0
+        knowledge_cutoff: new Date(17172e8)
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: true
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: true
+        reasoning_tokens: '!1'
+      gpt-4o-mini-tts:
+        name: gpt-4o-mini-tts
+        slug: gpt-4o-mini-tts
+        performance: 4
+        latency: 4
+        current_snapshot: gpt-4o-mini-tts
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: false
+            image: false
+            audio: true
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: true
+          realtime: false
+        reasoning_tokens: '!1'
+      gpt-4o-mini:
+        name: gpt-4o-mini
+        slug: gpt-4o-mini
+        display_name: GPT-4o mini
+        current_snapshot: gpt-4o-mini-2024-07-18
+        tagline: Fast, affordable small model for focused tasks
+        description: "GPT-4o mini (“o” for “omni”) is a fast, affordable small model\
+          \ for focused tasks. \nIt accepts both text and image inputs, and produces\
+          \ text outputs (including Structured Outputs). \nIt is ideal for fine-tuning,\
+          \ and model outputs from a larger model like GPT-4o can be distilled to\
+          \ GPT-4o-mini to produce similar results at lower cost and latency.\n"
+        type: chat
+        snapshots:
+        - gpt-4o-mini-2024-07-18
+        compare_prices:
+        - gpt-4o
+        - o3-mini
+        examples:
+        - classification
+        - keywords_search
+        - translation
+        - extract_tags
+        supported_tools:
+          function_calling: true
+          web_search: true
+          file_search: true
+          file_uploads: false
+          image_generation: true
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+          free:
+            rpm: 3
+            rpd: 200
+            tpm: 40000.0
+          tier_1:
+            rpm: 500
+            rpd: 10000.0
+            tpm: 200000.0
+            batch_queue_limit: 2000000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 2000000.0
+            batch_queue_limit: 20000000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 4000000.0
+            batch_queue_limit: 40000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 10000000.0
+            batch_queue_limit: 1000000000.0
+          tier_5:
+            rpm: 30000.0
+            tpm: 150000000.0
+            batch_queue_limit: 15000000000.0
+      gpt-4o-realtime-preview:
+        name: gpt-4o-realtime-preview
+        slug: gpt-4o-realtime-preview
+        display_name: GPT-4o Realtime
+        current_snapshot: gpt-4o-realtime-preview-2024-12-17
+        tagline: Model capable of realtime text and audio inputs and outputs
+        description: 'This is a preview release of the GPT-4o Realtime model, capable
+          of responding to audio and text inputs in realtime over WebRTC or a WebSocket
+          interface.
+
+          '
+        type: other
+        playground_url: /playground/realtime
+        snapshots:
+        - gpt-4o-realtime-preview-2025-06-03
+        - gpt-4o-realtime-preview-2024-12-17
+        - gpt-4o-realtime-preview-2024-10-01
+        rate_limits:
+          tier_1:
+            rpm: 200
+            rpd: 1000.0
+            tpm: 40000.0
+          tier_2:
+            rpm: 400
+            tpm: 200000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 800000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 4000000.0
+          tier_5:
+            rpm: 20000.0
+            tpm: 15000000.0
+      gpt-4o-search-preview:
+        name: gpt-4o-search-preview
+        slug: gpt-4o-search-preview
+        display_name: GPT-4o Search Preview
+        current_snapshot: gpt-4o-search-preview-2025-03-11
+        tagline: GPT model for web search in Chat Completions
+        description: 'GPT-4o Search Preview is a specialized model trained to understand
+          and execute [web search](/docs/guides/tools-web-search?api-mode=chat) queries
+          with the Chat Completions API. In addition to token fees, web search queries
+          have a fee per tool call. Learn more in the [pricing](/docs/pricing) page.
+
+          '
+        type: other
+        snapshots:
+        - gpt-4o-search-preview-2025-03-11
+        compare_prices:
+        - gpt-4o-mini
+        - gpt-4o
+        examples: 'null'
+        rate_limits:
+          tier_1:
+            rpm: 100
+            tpm: 30000.0
+            batch_queue_limit: 0
+          tier_2:
+            rpm: 500
+            tpm: 45000.0
+            batch_queue_limit: 0
+          tier_3:
+            rpm: 500
+            tpm: 80000.0
+            batch_queue_limit: 0
+          tier_4:
+            rpm: 1000.0
+            tpm: 200000.0
+            batch_queue_limit: 0
+          tier_5:
+            rpm: 1000.0
+            tpm: 3000000.0
+            batch_queue_limit: 0
+      gpt-4o-transcribe:
+        name: gpt-4o-transcribe
+        slug: gpt-4o-transcribe
+        performance: 4
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 16000.0
+        max_output_tokens: 2000.0
+        knowledge_cutoff: new Date(17172e8)
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: true
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: true
+        reasoning_tokens: '!1'
+      gpt-4o:
+        name: gpt-4o
+        slug: gpt-4o
+        display_name: GPT-4o
+        current_snapshot: gpt-4o-2024-08-06
+        tagline: Fast, intelligent, flexible GPT model
+        description: 'GPT-4o (“o” for “omni”) is our versatile, high-intelligence
+          flagship model.
+
+          It accepts both text and image inputs, and produces text outputs (including
+          Structured Outputs).
+
+          It is the best model for most tasks, and is our most capable model outside
+          of our o-series models.
+
+          '
+        type: chat
+        snapshots:
+        - gpt-4o-2024-11-20
+        - gpt-4o-2024-08-06
+        - gpt-4o-2024-05-13
+        compare_prices:
+        - gpt-4o-mini
+        - o3-mini
+        examples:
+        - math_tutor
+        - travel_assistant
+        - clothing_recommendation
+        - recipe_generation
+        supported_tools:
+          function_calling: true
+          web_search: true
+          file_search: true
+          file_uploads: false
+          image_generation: true
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+          tier_1:
+            rpm: 500
+            tpm: 30000.0
+            batch_queue_limit: 90000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 450000.0
+            batch_queue_limit: 1350000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 800000.0
+            batch_queue_limit: 50000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 2000000.0
+            batch_queue_limit: 200000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 30000000.0
+            batch_queue_limit: 5000000000.0
+      gpt-image-1:
+        name: gpt-image-1
+        slug: gpt-image-1
+        performance: 4
+        latency: 1
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: false
+            image: true
+            audio: false
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: true
+          image_edit: true
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        reasoning_tokens: '!1'
+      o1-mini:
+        name: o1-mini
+        slug: o1-mini
+        current_snapshot: o1-mini-2024-09-12
+        tagline: A small model alternative to o1
+        description: 'The o1 reasoning model is designed to solve hard problems across
+          domains. o1-mini is a faster and more affordable reasoning model, but we
+          recommend using the newer o3-mini model that features higher intelligence
+          at the same latency and price as o1-mini.
+
+          '
+        type: reasoning
+        snapshots:
+        - o1-mini-2024-09-12
+        compare_prices:
+        - o1
+        - o3-mini
+        point_to: o3-mini
+        deprecated: '!0'
+        supported_tools:
+          function_calling: false
+          web_search: false
+          file_search: true
+          file_uploads: false
+          image_generation: false
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+          tier_1:
+            rpm: 500
+            tpm: 200000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 2000000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 4000000.0
+            batch_queue_limit: 40000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 10000000.0
+            batch_queue_limit: 1000000000.0
+          tier_5:
+            rpm: 30000.0
+            tpm: 150000000.0
+            batch_queue_limit: 15000000000.0
+      o1-preview:
+        name: o1-preview
+        slug: o1-preview
+        display_name: o1 Preview
+        current_snapshot: o1-preview-2024-09-12
+        tagline: Preview of our first o-series reasoning model
+        description: 'Research preview of the o1 series of models, trained with reinforcement
+          learning to perform complex reasoning. o1 models think before they answer,
+          producing a long internal chain of thought before responding to the user.
+
+          '
+        type: reasoning
+        snapshots:
+        - o1-preview-2024-09-12
+        compare_prices:
+        - o1
+        - o3-mini
+        point_to: o1
+        deprecated: '!0'
+        rate_limits:
+          tier_1:
+            rpm: 500
+            tpm: 30000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 450000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 800000.0
+            batch_queue_limit: 50000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 2000000.0
+            batch_queue_limit: 200000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 30000000.0
+            batch_queue_limit: 5000000000.0
+      o1-pro:
+        name: o1-pro
+        slug: o1-pro
+        current_snapshot: o1-pro-2025-03-19
+        tagline: Version of o1 with more compute for better responses
+        description: "The o1 series of models are trained with reinforcement learning\
+          \ to think \nbefore they answer and perform complex reasoning. The o1-pro\
+          \ model uses more \ncompute to think harder and provide consistently better\
+          \ answers.\n\no1-pro is available in the [Responses API only](/docs/api-reference/responses)\n\
+          to enable support for multi-turn model interactions before responding to\
+          \ API\nrequests, and other advanced API features in the future.\n"
+        type: reasoning
+        snapshots:
+        - o1-pro-2025-03-19
+        compare_prices:
+        - o1
+        - o3-mini
+        supported_tools:
+          function_calling: true
+          web_search: false
+          file_search: true
+          file_uploads: false
+          image_generation: false
+          code_interpreter: false
+          mcp: true
+        rate_limits:
+          tier_1:
+            rpm: 500
+            tpm: 30000.0
+            batch_queue_limit: 90000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 450000.0
+            batch_queue_limit: 1350000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 800000.0
+            batch_queue_limit: 50000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 2000000.0
+            batch_queue_limit: 200000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 30000000.0
+            batch_queue_limit: 5000000000.0
+      o1:
+        name: o1
+        slug: o1
+        current_snapshot: o1-2024-12-17
+        tagline: Previous full o-series reasoning model
+        description: 'The o1 series of models are trained with reinforcement learning
+          to perform complex reasoning. o1 models think before they answer, producing
+          a long internal chain of thought before responding to the user.
+
+          '
+        type: reasoning
+        snapshots:
+        - o1-2024-12-17
+        compare_prices:
+        - o1-mini
+        - o3-mini
+        grouped_models:
+        - o1-preview
+        supported_tools:
+          function_calling: true
+          web_search: false
+          file_search: true
+          file_uploads: false
+          image_generation: false
+          code_interpreter: false
+          mcp: true
+        rate_limits:
+          tier_1:
+            rpm: 500
+            tpm: 30000.0
+            batch_queue_limit: 90000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 450000.0
+            batch_queue_limit: 1350000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 800000.0
+            batch_queue_limit: 50000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 2000000.0
+            batch_queue_limit: 200000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 30000000.0
+            batch_queue_limit: 5000000000.0
+      o3-mini:
+        name: o3-mini
+        slug: o3-mini
+        current_snapshot: o3-mini-2025-01-31
+        tagline: A small model alternative to o3
+        description: 'o3-mini is our newest small reasoning model, providing high
+          intelligence at the same cost and latency targets of o1-mini. o3-mini supports
+          key developer features, like Structured Outputs, function calling, and Batch
+          API.
+
+          '
+        type: reasoning
+        snapshots:
+        - o3-mini-2025-01-31
+        compare_prices:
+        - gpt-4o-mini
+        - o1-mini
+        examples:
+        - landing_page_generation
+        - analyze_policy
+        - text_to_sql
+        - graph_entity_extraction
+        supported_tools:
+          function_calling: true
+          web_search: false
+          file_search: true
+          file_uploads: false
+          image_generation: true
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+          tier_1:
+            rpm: 1000.0
+            tpm: 100000.0
+            batch_queue_limit: 1000000.0
+          tier_2:
+            rpm: 2000.0
+            tpm: 200000.0
+            batch_queue_limit: 2000000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 4000000.0
+            batch_queue_limit: 40000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 10000000.0
+            batch_queue_limit: 1000000000.0
+          tier_5:
+            rpm: 30000.0
+            tpm: 150000000.0
+            batch_queue_limit: 15000000000.0
+      o3:
+        name: o3
+        slug: o3
+        current_snapshot: o3-2025-04-16
+        tagline: Our most powerful reasoning model
+        description: "o3 is a well-rounded and powerful model across domains. It sets\
+          \ a new standard for math, science, coding, and visual reasoning tasks.\
+          \ It also excels at technical writing and instruction-following. Use it\
+          \ to think through multi-step problems that involve analysis across text,\
+          \ code, and images. \n\nLearn more about how to use our reasoning models\
+          \ in our [reasoning](/docs/guides/reasoning?api-mode=responses) guide.\n"
+        type: reasoning
+        snapshots:
+        - o3-2025-04-16
+        compare_prices:
+        - o1
+        - o4-mini
+        supported_tools:
+          function_calling: true
+          web_search: false
+          file_search: true
+          file_uploads: false
+          image_generation: true
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+          tier_1:
+            rpm: 500
+            tpm: 30000.0
+            batch_queue_limit: 90000.0
+          tier_2:
+            rpm: 5000.0
+            tpm: 450000.0
+            batch_queue_limit: 1350000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 800000.0
+            batch_queue_limit: 50000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 2000000.0
+            batch_queue_limit: 200000000.0
+          tier_5:
+            rpm: 10000.0
+            tpm: 30000000.0
+            batch_queue_limit: 5000000000.0
+      o4-mini:
+        name: o4-mini
+        slug: o4-mini
+        current_snapshot: o4-mini-2025-04-16
+        tagline: Faster, more affordable reasoning model
+        description: "o4-mini is our latest small o-series model. It's optimized for\
+          \ fast, effective reasoning with exceptionally efficient performance in\
+          \ coding and visual tasks. \n\nLearn more about how to use our reasoning\
+          \ models in our [reasoning](/docs/guides/reasoning?api-mode=responses) guide.\n"
+        type: reasoning
+        snapshots:
+        - o4-mini-2025-04-16
+        compare_prices:
+        - o3
+        - o3-mini
+        supported_tools:
+          function_calling: true
+          web_search: false
+          file_search: true
+          file_uploads: false
+          image_generation: false
+          code_interpreter: true
+          mcp: true
+        rate_limits:
+          tier_1:
+            rpm: 1000.0
+            tpm: 100000.0
+            batch_queue_limit: 1000000.0
+          tier_2:
+            rpm: 2000.0
+            tpm: 200000.0
+            batch_queue_limit: 2000000.0
+          tier_3:
+            rpm: 5000.0
+            tpm: 4000000.0
+            batch_queue_limit: 40000000.0
+          tier_4:
+            rpm: 10000.0
+            tpm: 10000000.0
+            batch_queue_limit: 1000000000.0
+          tier_5:
+            rpm: 30000.0
+            tpm: 150000000.0
+            batch_queue_limit: 15000000000.0
+      omni-moderation-latest:
+        name: omni-moderation-latest
+        display_name: omni-moderation
+        slug: omni-moderation-latest
+        current_snapshot: omni-moderation-2024-09-26
+        tagline: Identify potentially harmful content in text and images
+        description: 'Moderation models are free models designed to detect harmful
+          content.
+
+          This model is our most capable moderation model, accepting images as input
+          as well.
+
+          '
+        type: other
+        snapshots:
+        - omni-moderation-2024-09-26
+        rate_limits:
+          free:
+            rpm: 250
+            rpd: 5000.0
+            tpm: 10000.0
+          tier_1:
+            rpm: 500
+            rpd: 10000.0
+            tpm: 10000.0
+          tier_2:
+            rpm: 500
+            tpm: 20000.0
+          tier_3:
+            rpm: 1000.0
+            tpm: 50000.0
+          tier_4:
+            rpm: 2000.0
+            tpm: 250000.0
+          tier_5:
+            rpm: 5000.0
+            tpm: 500000.0
+      text-embedding-3-large:
+        name: text-embedding-3-large
+        slug: text-embedding-3-large
+        performance: 3
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: true
+          moderation: false
+          speech_generation: false
+          realtime: false
+      text-embedding-3-small:
+        name: text-embedding-3-small
+        slug: text-embedding-3-small
+        performance: 2
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: true
+          moderation: false
+          speech_generation: false
+          realtime: false
+      text-embedding-ada-002:
+        name: text-embedding-ada-002
+        slug: text-embedding-ada-002
+        performance: 1
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: true
+          moderation: false
+          speech_generation: false
+          realtime: false
+      tts-1-hd:
+        name: tts-1-hd
+        slug: tts-1-hd
+        performance: 3
+        latency: 3
+        current_snapshot: tts-1-hd
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: false
+            image: false
+            audio: true
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: true
+          realtime: false
+        reasoning_tokens: '!1'
+      tts-1:
+        name: tts-1
+        slug: tts-1
+        performance: 2
+        latency: 4
+        current_snapshot: tts-1
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: false
+            image: false
+            audio: true
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: true
+          realtime: false
+        reasoning_tokens: '!1'
+      whisper-1:
+        name: whisper-1
+        slug: whisper-1
+        performance: 2
+        latency: 3
+        modalities:
+          input:
+            text: false
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: true
+          translation: true
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+      computer-use-preview-2025-03-11:
+        name: computer-use-preview-2025-03-11
+        slug: computer-use-preview-2025-03-11
+        performance: 2
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 8192
+        max_output_tokens: 1024
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: true
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!0'
+        price_data:
+          main:
+            input: 3
+            output: 12
+          batch:
+            input: 1.5
+            output: 6
+      gpt-3.5-0301:
+        name: gpt-3.5-0301
+        slug: gpt-3-5-0301
+        performance: 1
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 16385
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16304544e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+      gpt-3.5-turbo-0125:
+        name: gpt-3.5-turbo-0125
+        slug: gpt-3-5-turbo-0125
+        performance: 1
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 16385
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16304544e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-3.5-turbo-0613:
+        name: gpt-3.5-turbo-0613
+        slug: gpt-3-5-turbo-0613
+        performance: 1
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 16385
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16304544e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-3.5-turbo-1106:
+        name: gpt-3.5-turbo-1106
+        slug: gpt-3-5-turbo-1106
+        performance: 1
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 16385
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16304544e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4-0125-preview:
+        name: gpt-4-0125-preview
+        slug: gpt-4-0125-preview
+        performance: 2
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(17013888e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4-0314:
+        name: gpt-4-0314
+        slug: gpt-4-0314
+        performance: 2
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 8192
+        max_output_tokens: 8192
+        knowledge_cutoff: new Date(17013888e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 30
+            output: 60
+          batch:
+            input: 15
+            output: 30
+      gpt-4-0613:
+        name: gpt-4-0613
+        slug: gpt-4-0613
+        performance: 2
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 8192
+        max_output_tokens: 8192
+        knowledge_cutoff: new Date(17013888e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4-1106-vision-preview:
+        name: gpt-4-1106-vision-preview
+        slug: gpt-4-1106-vision-preview
+        performance: 2
+        latency: 3
+        deprecated: '!0'
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(17013888e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4-turbo-2024-04-09:
+        name: gpt-4-turbo-2024-04-09
+        slug: gpt-4-turbo-2024-04-09
+        performance: 2
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(17013888e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4.1-2025-04-14:
+        name: gpt-4.1-2025-04-14
+        slug: gpt-4.1-2025-04-14
+        performance: 4
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 1047576
+        max_output_tokens: 32768
+        knowledge_cutoff: new Date(17172e8)
+        supported_features:
+          streaming: true
+          predicted_outputs: true
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: true
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: true
+          file_search: true
+          file_uploads: true
+          web_search: true
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4.1-mini-2025-04-14:
+        name: gpt-4.1-mini-2025-04-14
+        slug: gpt-4.1-mini-2025-04-14
+        performance: 3
+        latency: 4
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 1047576
+        max_output_tokens: 32768
+        knowledge_cutoff: new Date(17172e8)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: true
+          file_uploads: true
+          web_search: true
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+      gpt-4.1-nano-2025-04-14:
+        name: gpt-4.1-nano-2025-04-14
+        slug: gpt-4.1-nano-2025-04-14
+        performance: 2
+        latency: 5
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 1047576
+        max_output_tokens: 32768
+        knowledge_cutoff: new Date(17172e8)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: true
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: true
+          file_uploads: true
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+      gpt-4.5-preview-2025-02-27:
+        name: gpt-4.5-preview-2025-02-27
+        slug: gpt-4.5-preview-2025-02-27
+        performance: 4
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: true
+          evals: true
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: true
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+      gpt-4o-2024-05-13:
+        name: gpt-4o-2024-05-13
+        slug: gpt-4o-2024-05-13
+        performance: 3
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: true
+          file_uploads: true
+          web_search: true
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+      gpt-4o-2024-08-06:
+        name: gpt-4o-2024-08-06
+        slug: gpt-4o-2024-08-06
+        performance: 3
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: true
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: true
+          file_search: true
+          file_uploads: true
+          web_search: true
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4o-2024-11-20:
+        name: gpt-4o-2024-11-20
+        slug: gpt-4o-2024-11-20
+        performance: 3
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: true
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: true
+          file_search: true
+          file_uploads: true
+          web_search: true
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4o-audio-preview-2024-10-01:
+        name: gpt-4o-audio-preview-2024-10-01
+        slug: gpt-4o-audio-preview-2024-10-01
+        performance: 3
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: true
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4o-audio-preview-2024-12-17:
+        name: gpt-4o-audio-preview-2024-12-17
+        slug: gpt-4o-audio-preview-2024-12-17
+        performance: 3
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: true
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4o-audio-preview-2025-06-03:
+        name: gpt-4o-audio-preview-2025-06-03
+        slug: gpt-4o-audio-preview-2025-06-03
+        performance: 3
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: true
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4o-mini-2024-07-18:
+        name: gpt-4o-mini-2024-07-18
+        slug: gpt-4o-mini-2024-07-18
+        performance: 2
+        latency: 4
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: true
+          distillation: false
+          file_search: true
+          file_uploads: true
+          web_search: true
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+      gpt-4o-mini-audio-preview-2024-12-17:
+        name: gpt-4o-mini-audio-preview-2024-12-17
+        slug: gpt-4o-mini-audio-preview-2024-12-17
+        performance: 2
+        latency: 4
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: true
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4o-mini-realtime-preview-2024-12-17:
+        name: gpt-4o-mini-realtime-preview-2024-12-17
+        slug: gpt-4o-mini-realtime-preview-2024-12-17
+        performance: 2
+        latency: 5
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: true
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: true
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: true
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4o-mini-search-preview-2025-03-11:
+        name: gpt-4o-mini-search-preview-2025-03-11
+        slug: gpt-4o-mini-search-preview-2025-03-11
+        performance: 2
+        latency: 4
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+      gpt-4o-realtime-preview-2024-10-01:
+        name: gpt-4o-realtime-preview-2024-10-01
+        slug: gpt-4o-realtime-preview-2024-10-01
+        performance: 2
+        latency: 4
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: true
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: true
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: true
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4o-realtime-preview-2024-12-17:
+        name: gpt-4o-realtime-preview-2024-12-17
+        slug: gpt-4o-realtime-preview-2024-12-17
+        performance: 3
+        latency: 4
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: true
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: true
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: true
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4o-realtime-preview-2025-06-03:
+        name: gpt-4o-realtime-preview-2025-06-03
+        slug: gpt-4o-realtime-preview-2025-06-03
+        performance: 3
+        latency: 4
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: true
+          output:
+            text: true
+            image: false
+            audio: true
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 4096
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: true
+          prompt_caching: true
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: true
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      gpt-4o-search-preview-2025-03-11:
+        name: gpt-4o-search-preview-2025-03-11
+        slug: gpt-4o-search-preview-2025-03-11
+        performance: 3
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 16384
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      o1-2024-12-17:
+        name: o1-2024-12-17
+        slug: o1-2024-12-17
+        performance: 4
+        latency: 1
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 200000.0
+        max_output_tokens: 100000.0
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: true
+          file_uploads: true
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!0'
+        price_data:
+          main:
+            input: 15
+            cached_output: 7.5
+            output: 60
+          batch:
+            input: 7.5
+            output: 30
+      o1-mini-2024-09-12:
+        name: o1-mini-2024-09-12
+        slug: o1-mini-2024-09-12
+        performance: 3
+        latency: 2
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 65536
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: true
+          file_uploads: true
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: false
+          assistants: true
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!0'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      o1-preview-2024-09-12:
+        name: o1-preview-2024-09-12
+        slug: o1-preview-2024-09-12
+        performance: 3
+        latency: 1
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 128000.0
+        max_output_tokens: 32768
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: true
+          file_uploads: true
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: false
+          assistants: true
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!0'
+        price_data:
+          main:
+            input: 10
+            output: 30
+          batch:
+            input: 5
+            output: 15
+      o1-pro-2025-03-19:
+        name: o1-pro-2025-03-19
+        slug: o1-pro-2025-03-19
+        performance: 4
+        latency: 1
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 200000.0
+        max_output_tokens: 100000.0
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: true
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!0'
+        price_data:
+          main:
+            input: 150
+            output: 600
+          batch:
+            input: 75
+            output: 300
+      o3-2025-04-16:
+        name: o3-2025-04-16
+        slug: o3-2025-04-16
+        performance: 5
+        latency: 1
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 200000.0
+        max_output_tokens: 100000.0
+        knowledge_cutoff: new Date(17172e8)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: true
+          evals: true
+          stored_completions: true
+          fine_tuning: false
+          distillation: false
+          file_search: true
+          file_uploads: true
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!0'
+        price_data:
+          main:
+            input: 15
+            cached_output: 7.5
+            output: 60
+          batch:
+            input: 7.5
+            output: 30
+      o3-mini-2025-01-31:
+        name: o3-mini-2025-01-31
+        slug: o3-mini-2025-01-31
+        performance: 4
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 200000.0
+        max_output_tokens: 100000.0
+        knowledge_cutoff: new Date(16961184e5)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: false
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: true
+          file_uploads: true
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: true
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!0'
+      o4-mini-2025-04-16:
+        name: o4-mini-2025-04-16
+        slug: o4-mini-2025-04-16
+        performance: 4
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        context_window: 200000.0
+        max_output_tokens: 100000.0
+        knowledge_cutoff: new Date(17172e8)
+        supported_features:
+          streaming: true
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: true
+          function_calling: true
+          prompt_caching: true
+          evals: true
+          stored_completions: true
+          fine_tuning: true
+          distillation: false
+          file_search: true
+          file_uploads: true
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+        supported_endpoints:
+          chat_completions: true
+          completions: false
+          responses: true
+          assistants: false
+          batch: true
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: false
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!0'
+      omni-moderation-2024-09-26:
+        name: omni-moderation-2024-09-26
+        slug: omni-moderation-2024-09-26
+        performance: 3
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: true
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+        supported_features:
+          streaming: false
+          predicted_outputs: false
+          image_input: true
+          structured_outputs: false
+          function_calling: false
+          prompt_caching: false
+          evals: false
+          stored_completions: false
+          fine_tuning: false
+          distillation: false
+          file_search: false
+          file_uploads: false
+          web_search: false
+          json_mode: false
+          reasoning_effort: false
+          system_messages: false
+      text-moderation-007:
+        name: text-moderation-007
+        slug: text-moderation-007
+        performance: 2
+        latency: 3
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        max_output_tokens: 32768
+        knowledge_cutoff: new Date(16304544e5)
+        supported_endpoints:
+          chat_completions: false
+          completions: false
+          responses: false
+          assistants: false
+          batch: false
+          image_generation: false
+          image_edit: false
+          transcription: false
+          translation: false
+          embeddings: false
+          moderation: true
+          speech_generation: false
+          realtime: false
+        reasoning_tokens: '!1'
+
