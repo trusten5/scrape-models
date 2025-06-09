@@ -1,0 +1,8 @@
+{
+  "timestamp": "2025-06-09T15:44:33.694954+00:00",
+  "input_file": "runs/run20250609/raw20250609.js",
+  "output_file": "runs/run20250609/models.yaml",
+  "provider": "openai",
+  "snapshotsCheck": true,
+  "model_count": 80
+}
